@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./appDark.css";
+import dotenv from "dotenv";
 
 import { initializeApp } from "firebase/app";
 import {
@@ -54,6 +55,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import { compiler } from "markdown-to-jsx";
 // import Markdown from "markdown-to-jsx";
 // import { render } from "react-dom";
+dotenv.config();
 
 const { twemojify } = require("react-twemojify");
 const { createImgElement } = require("react-twemojify/lib/img");
