@@ -58,12 +58,12 @@ import "react-toastify/dist/ReactToastify.css";
 const { twemojify } = require("react-twemojify");
 const { createImgElement } = require("react-twemojify/lib/img");
 
-if (
-  window.location.hostname !== "untitledchat.com" &&
-  window.location.hostname !== "localhost"
-) {
-  window.location = "https://untitledchat.com";
-}
+// if (
+//   window.location.hostname !== "untitledchat.com" &&
+//   window.location.hostname !== "localhost"
+// ) {
+//   window.location = "https://untitledchat.com";
+// }
 
 initializeApp({
   apiKey: process.env.REACT_APP_APIKEY_FIREBASE,
