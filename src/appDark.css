@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Source+Sans+Pro:wght@400;700&family=Tajawal&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+body {
+  background-color: #25282a;
+  font-family: 'Source Sans Pro', 'Tajawal', 'Noto Sans SC';
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: #7151c8af;
+  color: #ffffff;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.App {
+  text-align: center;
+  max-width: 728px;
+  margin: 0 auto;
+  border-radius: 25px;
+  transition: all 0.2s;
+}
+
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  min-height: 50px;
+  color: #e7e7e7;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+img.avatar {
+  background-color: #292c2e;
+}
+
+.App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #201f24;
+  border-radius: 25px;
+}
+
+#title {
+  font-weight: 700;
+  font-size: 160%;
+}
+
+#roomId {
+  font-size: 130%;
+  color: #514e5d;
+}
+
+.roomTitle {
+  padding: 30px;
+  line-height: 5%;
+  text-align: center;
+}
+
+main {
+  padding: 10px;
+  height: 77.6vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.5rem;
+}
+
+main::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: #998ac748;
+}
+
+form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #1b1b1f;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  font-size: 1.5rem;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 25px;
+}
+
+form button {
+  background-color: #36275d;
+  transition: all 0.2s;
+  margin: 10px 10px 10px 5px;
+  border-radius: 50px;
+  vertical-align: text-bottom;
+}
+
+form button:hover {
+  background-color: #3d2d69;
+}
+
+#textInput {
+  box-sizing: border-box;
+  line-height: 1.5;
+  width: 90%;
+  font-size: 1.5rem;
+  text-align: left;
+  background: #272727;
+  color: #8f8f8f;
+  outline: none;
+  border: none;
+  /* padding-top: 19px; */
+  padding: 0 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  transition: all 0.2s;
+  border-radius: 50px;
+  margin: 10px 5px 10px 10px;
+}
+
+#textInput:hover,
+#textInput:focus {
+  color: #ffffff;
+  background: #242424;
+  letter-spacing: 0.5px;
+}
+
+#textInput.limitReached {
+  background-color: #442323;
+  border: 3px solid red;
+}
+
+#textInput:disabled {
+  cursor: not-allowed;
+}
+
+#textInput:disabled:hover {
+  background: #2f2f2f;
+  color: #8f8f8f;
+  letter-spacing: normal;
+}
+
+.submit-button {
+  background-color: #432c81;
+  border: none;
+  color: #e7e7e7;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+}
+
+button {
+  border: none;
+  color: #e7e7e7;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  height: 75%;
+  text-align: center;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: #6044ad;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  opacity: 0.6;
+  background-color: #5d42a7;
+  cursor: not-allowed !important;
+}
+
+.sign-in-google {
+  color: #e7e7e7;
+  max-width: 300px;
+  width: 60%;
+  margin: 0 auto;
+  background: url("./assets/img/wallpaper.png");
+  background-position: center;
+  background-size: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+  padding: 12px;
+}
+
+.sign-in-google:hover,
+.sign-in-google:focus {
+  background-size: 120%;
+}
+
+.sign-in-twitter {
+  color: #e7e7e7;
+  max-width: 300px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #1DA1F2;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+  padding: 12px;
+}
+
+.sign-in-twitter:hover {
+  background-color: #197ebd;
+}
+
+.sign-in-github {
+  color: #e7e7e7;
+  max-width: 300px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #161616;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+  padding: 12px;
+}
+
+.sign-in-github:hover {
+  background-color: #0a0a0a;
+}
+
+.sign-in-anon {
+  color: #e7e7e7;
+  max-width: 300px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #272727;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+  padding: 12px;
+}
+
+.sign-in-anon:hover {
+  background-color: #222222;
+}
+
+.sign-out {
+  background-color: #282531;
+  border: none;
+  color: #e7e7e7;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  min-width: 3rem;
+  height: 75%;
+  text-align: center;
+  transition: all 0.2s;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+.sign-out:hover {
+  background-color: #1f1d24;
+}
+
+ul,
+li {
+  text-align: left;
+  list-style: none;
+}
+
+.sent a {
+  color: #e7e7e7;
+  text-decoration: none;
+}
+
+.received a {
+  color: #e7e7e7;
+  text-decoration: none;
+}
+
+a:link:hover {
+  text-decoration: underline;
+}
+
+.messageText {
+  max-width: 400px;
+  min-width: none;
+  margin-bottom: 3px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  color: #e7e7e7;
+  word-wrap: break-word;
+  text-align: left;
+  top: -7px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent .messageText {
+  color: #e7e7e7;
+  background: #432c81;
+  align-self: flex-end;
+}
+
+.received .messageText {
+  background: #292c2e;
+  color: #e7e7e7;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+#helpLink {
+  color: #646479;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+#helpLink:hover {
+  color: #a3a3c0;
+  letter-spacing: 0.1rem;
+}
+
+.timestamp {
+  color: #a19cb3;
+  margin-top: 1px;
+}
+
+.sent .timestamp {
+  text-align: right;
+  margin-right: 3.2rem;
+}
+
+.received .timestamp {
+  text-align: left;
+  margin-left: 3.2rem;
+}
+
+.messageText .emoji {
+  margin-left: 2px;
+  margin-right: 2px;
+  vertical-align: text-bottom;
+}
+
+.emojilette {
+  content: url("assets/img/emojicon.svg");
+  width: 30px;
+  background: #2f2f2f;
+  background-size: 100px;
+  margin: 10px;
+  margin: none;
+  vertical-align: middle;
+  /* transition: content 0.2s; */
+}
+
+svg {
+  vertical-align: text-bottom;
+}
+
+.deleteBtn {
+  background: #292c2e;
+  border: none;
+  border-radius: 25px;
+  color: #e7e7e7;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+}
+
+.received .deleteBtn {
+  display: none;
+}
+
+.settings {
+  background-color: #131313;
+  height: 45px;
+  width: 45px;
+  border-radius: 25px;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  margin: 20px;
+}
+
+.menu-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: #27262c;
+  max-width: 300px;
+  z-index: 1;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.menu-content button {
+  color: #e7e7e7;
+  background-color: #27262c;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.1s;
+  border-radius: 25px;
+  align-items: center;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.menu-content button:hover {
+  background-color: #42404b;
+}
+
+.menu:hover .menu-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Toastify__toast-body {
+  color: #e7e7e7;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
+}
+
+
+.tooltip {
+  font-family: 'Ubuntu Mono';
+  border-radius: 25px;
+}
+
+/* .emojilette:hover {
+  content: url("assets/img/emojiconNew.svg");
+} */
+
+/* Mobile */
+
+@media only screen and (max-width: 728px) {
+  .App header {
+    border-radius: 0 0 25px 25px;
+  }
+
+  form {
+    border-radius: 25px 25px 0 0;
+    height: 15vh;
+  }
+}
