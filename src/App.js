@@ -50,11 +50,10 @@ import { HiTrash, HiMenu } from "react-icons/hi";
 import { compiler } from "markdown-to-jsx";
 import { useLocation, useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "react-toastify/dist/ReactToastify.css";
 
-// import { compiler } from "markdown-to-jsx";
-// import Markdown from "markdown-to-jsx";
-// import { render } from "react-dom";
 dotenv.config();
 
 const { twemojify } = require("react-twemojify");
@@ -161,21 +160,18 @@ function App() {
               Copy Room ID
             </button>
             <button
-              onClick={
-                // Twitter Share
-                () => {
-                  const url = `https://untitledchat.com/#room:${roomId} \n\n`;
-                  const text = `Check out this new Chat Room: `;
-                  const hashtags = "UntitledChat";
-                  const via = "untitledchat";
-                  const urlEncoded = encodeURIComponent(url);
-                  const textEncoded = encodeURIComponent(text);
-                  const hashtagsEncoded = encodeURIComponent(hashtags);
-                  const viaEncoded = encodeURIComponent(via);
-                  const twitterUrl = `https://twitter.com/intent/tweet?text=${textEncoded}&url=${urlEncoded}&hashtags=${hashtagsEncoded}&via=${viaEncoded}`;
-                  window.open(twitterUrl);
-                }
-              }
+              onClick={() => {
+                const url = `https://untitledchat.com/#room:${roomId} \n\n`;
+                const text = `Check out this new Chat Room: `;
+                const hashtags = "UntitledChat";
+                const via = "untitledchat";
+                const urlEncoded = encodeURIComponent(url);
+                const textEncoded = encodeURIComponent(text);
+                const hashtagsEncoded = encodeURIComponent(hashtags);
+                const viaEncoded = encodeURIComponent(via);
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${textEncoded}&url=${urlEncoded}&hashtags=${hashtagsEncoded}&via=${viaEncoded}`;
+                window.open(twitterUrl);
+              }}
             >
               <AiOutlineTwitter /> Share
             </button>
@@ -224,11 +220,6 @@ function SignIn() {
     signInWithRedirect(auth, provider);
   };
 
-  // const anonymousSignIn = () => {
-  //   const auth = getAuth();
-  //   signInAnonymously(auth);
-  // };
-
   return (
     <>
       <button onClick={signInWithGoogle} className="sign-in-google">
@@ -240,25 +231,12 @@ function SignIn() {
       <button onClick={signInWithGithub} className="sign-in-github">
         Sign In with GitHub <AiOutlineGithub />
       </button>
-      {/* <button onClick={anonymousSignIn} className="sign-in-anon">
-        Sign In Anonymously (You will lose data!)
-      </button> */}
       <a href="/privacypolicy.html" id="helpLink">
         Get help!
       </a>
     </>
   );
 }
-
-// function SignOut() {
-//   return (
-//     auth.currentUser && (
-//       <button className="sign-out" onClick={() => auth.signOut()}>
-//         Sign Out <FaSignOutAlt />
-//       </button>
-//     )
-//   );
-// }
 
 const defaultRoomId = "help";
 
@@ -305,7 +283,7 @@ function ChatRoom({ roomId, setRoomId }) {
       }
 
       if (cmd === "/yt") {
-        if (!args[1]) {
+        if (!args) {
           window.open("https://youtube.com/watch?v=dQw4w9WgXcQ");
         } else {
           window.open(
@@ -332,7 +310,7 @@ function ChatRoom({ roomId, setRoomId }) {
       }
 
       if (cmd === "/help") {
-        sendMessage(null, "WIP Command!");
+        sendMessage(null, "Help command!");
       }
       return;
     }
@@ -354,7 +332,7 @@ function ChatRoom({ roomId, setRoomId }) {
       });
       console.log(`Message written with ID: ${docRef.id}`);
     } catch (e) {
-      console.warn("Failed to add to usernames", e);
+      console.warn("Failed to add usernames: ", e);
     }
 
     setFormValue("");
@@ -374,7 +352,7 @@ function ChatRoom({ roomId, setRoomId }) {
       );
       console.log(`User updated or added with id: ${usernameRef.id}`);
     } catch (e) {
-      console.warn("Failed to update usernames", e);
+      console.warn("Failed to update usernames: ", e);
     }
   };
 
@@ -450,7 +428,7 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
   const result = twemojify(text, createImgElement, { size: 21 }) || "";
 
-  const result2 =
+  let result2 =
     typeof result === "string"
       ? compiler(result)
       : Array.isArray(result)
@@ -499,7 +477,6 @@ function ChatMessage(props) {
                 {result2}
               </Linkify>
             }
-            {/* {JSON.stringify(props.message)} */}
           </p>
         </div>
         <p className="timestamp">

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Source+Sans+Pro:wght@400;700&family=Tajawal&family=Ubuntu+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Source+Sans+Pro:wght@400;700&family=Tajawal&family=Ubuntu+Mono:wght@400;700&display=swap");
 
 body {
   background-color: #25282a;
-  font-family: 'Source Sans Pro', 'Tajawal', 'Noto Sans SC';
+  font-family: "Source Sans Pro", "Tajawal", "Noto Sans SC";
   overflow: hidden;
   transition: all 0.2s;
 }
@@ -140,7 +140,7 @@ form button:hover {
   padding: 0 10px;
   padding-right: 25px;
   padding-left: 25px;
-  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  font-family: "Ubuntu Mono", "Source Sans Pro";
   transition: all 0.2s;
   border-radius: 50px;
   margin: 10px 5px 10px 10px;
@@ -177,7 +177,7 @@ form button:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 1.25rem;
-  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  font-family: "Ubuntu Mono", "Source Sans Pro";
 }
 
 button {
@@ -187,7 +187,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1.25rem;
-  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  font-family: "Ubuntu Mono", "Source Sans Pro";
   height: 75%;
   text-align: center;
 }
@@ -229,7 +229,7 @@ button:disabled:hover {
   max-width: 300px;
   width: 60%;
   margin: 0 auto;
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   border-radius: 5px;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
@@ -284,7 +284,7 @@ button:disabled:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 1.25rem;
-  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  font-family: "Ubuntu Mono", "Source Sans Pro";
   min-width: 3rem;
   height: 75%;
   text-align: center;
@@ -336,7 +336,6 @@ a:link:hover {
   display: flex;
   align-items: center;
 }
-
 
 .sent {
   flex-direction: row-reverse;
@@ -417,7 +416,7 @@ svg {
   text-decoration: none;
   display: inline-block;
   font-size: 1.25rem;
-  font-family: 'Ubuntu Mono', 'Source Sans Pro';
+  font-family: "Ubuntu Mono", "Source Sans Pro";
 }
 
 .received .deleteBtn {
@@ -439,6 +438,7 @@ svg {
 }
 
 .menu-content {
+  /* display on left */
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -455,14 +455,14 @@ svg {
   padding: 5px 10px;
   text-decoration: none;
   display: block;
-  transition: all 0.1s;
+  transition: all 0.05s;
   border-radius: 25px;
   align-items: center;
   min-width: 200px;
   justify-content: center;
 }
 
-.menu-content button:hover {
+.menu-content button:hover:focus {
   background-color: #42404b;
 }
 
@@ -473,14 +473,18 @@ svg {
 
 .Toastify__toast-body {
   color: #e7e7e7;
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-size: 1.1rem;
 }
 
-
 .tooltip {
-  font-family: 'Ubuntu Mono';
+  font-family: "Ubuntu Mono";
   border-radius: 25px;
+}
+
+code {
+  font-family: "Ubuntu Mono";
+  font-size: 1rem;
 }
 
 /* .emojilette:hover {
