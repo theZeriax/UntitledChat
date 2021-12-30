@@ -50,8 +50,6 @@ import { HiTrash, HiMenu } from "react-icons/hi";
 import { compiler } from "markdown-to-jsx";
 import { useLocation, useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "react-toastify/dist/ReactToastify.css";
 
 dotenv.config();
