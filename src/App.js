@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./appDark.css";
+import "./index.css";
 import dotenv from "dotenv";
 
 import { initializeApp } from "firebase/app";
@@ -59,6 +60,8 @@ const { createImgElement } = require("react-twemojify/lib/img");
 
 // if (
 //   window.location.hostname !== "untitledchat.com" &&
+//   window.location.hostname !== "chat.zeriax.com" &&
+//   window.location.hostname !== "untitledchat.zeriax.com" &&
 //   window.location.hostname !== "localhost"
 // ) {
 //   window.location = "https://untitledchat.com";

@@ -136,7 +136,6 @@ form button:hover {
   color: #8f8f8f;
   outline: none;
   border: none;
-  /* padding-top: 19px; */
   padding: 0 10px;
   padding-right: 25px;
   padding-left: 25px;
@@ -399,7 +398,6 @@ a:link:hover {
   margin: 10px;
   margin: none;
   vertical-align: middle;
-  /* transition: content 0.2s; */
 }
 
 svg {
@@ -438,7 +436,6 @@ svg {
 }
 
 .menu-content {
-  /* display on left */
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -486,12 +483,6 @@ code {
   font-family: "Ubuntu Mono";
   font-size: 1rem;
 }
-
-/* .emojilette:hover {
-  content: url("assets/img/emojiconNew.svg");
-} */
-
-/* Mobile */
 
 @media only screen and (max-width: 728px) {
   .App header {
