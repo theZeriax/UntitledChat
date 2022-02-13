@@ -118,7 +118,10 @@ function ChatRoom({ roomId, setRoomId }) {
         createdAt: serverTimestamp(),
         text: formValue,
         uid,
-        characterName: auth.currentUser.displayName,
+        characterName:
+          auth.currentUser.displayName !== ""
+            ? auth.currentUser.displayName
+            : characterName,
         roomId,
         photoURL,
       });
