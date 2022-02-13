@@ -387,7 +387,8 @@ a:link:hover {
 
 .timestamp {
   color: #8e88a3;
-  margin-top: -3px;
+  margin-top: -5px;
+  margin-bottom: 15px;
 }
 
 .sent .timestamp {
