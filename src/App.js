@@ -271,6 +271,7 @@ function ChatRoom({ roomId, setRoomId }) {
     }
 
     const { uid } = auth.currentUser;
+    const { photoURL } = auth.currentUser;
 
     if (formValue.startsWith("/")) {
       const [cmd, ...args] = formValue.toLowerCase().split(" ");
@@ -328,8 +329,9 @@ function ChatRoom({ roomId, setRoomId }) {
         createdAt: serverTimestamp(),
         text: formValue,
         uid,
-        characterName,
+        characterName: auth.currentUser.displayName,
         roomId,
+        photoURL,
       });
       console.log(`Message written with ID: ${docRef.id}`);
     } catch (e) {
@@ -390,9 +392,7 @@ function ChatRoom({ roomId, setRoomId }) {
     <>
       <main>
         {messages &&
-          messages.map((msg, index) => (
-            <ChatMessage key={index} message={msg} />
-          ))}
+          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
         <div ref={scrollMarkerRef}></div>
       </main>
@@ -424,7 +424,7 @@ function ChatRoom({ roomId, setRoomId }) {
 }
 
 function ChatMessage(props) {
-  const { text, uid, characterName, createdAt, id } = props.message;
+  const { text, uid, characterName, createdAt, id, photoURL } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
   const result = twemojify(text, createImgElement, { size: 21 }) || "";
@@ -458,9 +458,11 @@ function ChatMessage(props) {
           <img
             className="avatar"
             src={
-              "https://avatars.dicebear.com/api/identicon/" +
-              uid +
-              ".svg?scale=50"
+              photoURL
+                ? photoURL
+                : "https://avatars.dicebear.com/api/identicon/" +
+                  uid +
+                  ".svg?scale=50"
             }
             alt="Avatar"
           />
@@ -481,16 +483,34 @@ function ChatMessage(props) {
           </p>
         </div>
         <p className="timestamp">
-          {characterName} •{" "}
-          {createdAt
-            ? formatDistanceToNow(new Date(createdAt.toMillis()), {
-                addSuffix: true,
-              })
-            : "less than a minute ago"}
+          {uid === auth.currentUser.uid ? (
+            <>
+              {createdAt
+                ? formatDistanceToNow(new Date(createdAt.toMillis()), {
+                    addSuffix: true,
+                  })
+                : "less than a minute ago"}{" "}
+              • {characterName}
+            </>
+          ) : (
+            <>
+              {characterName} •{" "}
+              {createdAt
+                ? formatDistanceToNow(new Date(createdAt.toMillis()), {
+                    addSuffix: true,
+                  })
+                : "less than a minute ago"}
+            </>
+          )}
         </p>
       </div>
     </>
   );
 }
+
+const isVisible = (element) => {
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(element);
+};
 
 export default App;

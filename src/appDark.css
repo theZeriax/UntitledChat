@@ -49,6 +49,10 @@ img.avatar {
   background-color: #292c2e;
 }
 
+img.message {
+  max-width: 100px;
+}
+
 .App section {
   display: flex;
   flex-direction: column;
@@ -319,7 +323,8 @@ a:link:hover {
 .messageText {
   max-width: 400px;
   min-width: none;
-  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 0px;
   line-height: 24px;
   padding: 10px 20px;
   border-radius: 25px;
@@ -371,12 +376,12 @@ a:link:hover {
 
 .timestamp {
   color: #a19cb3;
-  margin-top: 1px;
+  margin-top: -3px;
 }
 
 .sent .timestamp {
   text-align: right;
-  margin-right: 3.2rem;
+  margin-right: 5rem;
 }
 
 .received .timestamp {
