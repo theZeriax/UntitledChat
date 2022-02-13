@@ -5,6 +5,7 @@ import { compiler } from "markdown-to-jsx";
 import { doc, deleteDoc } from "firebase/firestore";
 
 import { auth, db } from "../App";
+import { strToNum } from "../strToNum";
 
 const { twemojify } = require("react-twemojify");
 const { createImgElement } = require("react-twemojify/lib/img");
@@ -14,6 +15,15 @@ function ChatMessage(props) {
 
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
   const result = twemojify(text, createImgElement, { size: 21 }) || "";
+
+  const config = {
+    dictionaries: [colors, adjectives, animals],
+    style: "capital",
+    seed: strToNum(uid),
+  };
+
+  const newName = uniqueNamesGenerator(config).replace(/_/g, "");
+  const username = characterName === "" ? newName : characterName;
 
   let result2 =
     typeof result === "string"
@@ -76,11 +86,11 @@ function ChatMessage(props) {
                     addSuffix: true,
                   })
                 : "less than a minute ago"}{" "}
-              • {characterName}
+              • {username}
             </>
           ) : (
             <>
-              {characterName} •{" "}
+              {username} •{" "}
               {createdAt
                 ? formatDistanceToNow(new Date(createdAt.toMillis()), {
                     addSuffix: true,
