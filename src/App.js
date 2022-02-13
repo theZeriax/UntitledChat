@@ -508,9 +508,4 @@ function ChatMessage(props) {
   );
 }
 
-const isVisible = (element) => {
-  const observer = new IntersectionObserver(callback, options);
-  observer.observe(element);
-};
-
 export default App;
