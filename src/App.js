@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./appDark.css";
 import "./index.css";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -28,7 +28,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ChatRoom from "./components/ChatRoom";
 import SignIn from "./components/SignIn";
 
-dotenv.config();
+// dotenv.config();
 
 // if (
 //   window.location.hostname !== "untitledchat.com" &&
@@ -47,7 +47,7 @@ const appConfig = {
   appId: process.env.REACT_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
-export const app = initializeApp(appConfig);
+initializeApp(appConfig);
 
 export const auth = getAuth();
 export const db = getFirestore();

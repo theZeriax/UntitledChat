@@ -3,6 +3,12 @@ import Linkify from "linkify-react";
 import { HiTrash } from "react-icons/hi";
 import { compiler } from "markdown-to-jsx";
 import { doc, deleteDoc } from "firebase/firestore";
+import {
+  uniqueNamesGenerator,
+  adjectives,
+  colors,
+  animals,
+} from "unique-names-generator";
 
 import { auth, db } from "../App";
 import { strToNum } from "../strToNum";

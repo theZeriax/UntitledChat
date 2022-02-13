@@ -336,6 +336,12 @@ a:link:hover {
   top: -7px;
 }
 
+.messageText img {
+  max-width: 200px;
+  border-radius: 10%;
+  margin: 5px 0px 0px 0px;
+}
+
 .message {
   display: flex;
   align-items: center;
