@@ -67,7 +67,6 @@ function Home() {
           const data = u.data();
           if (data?.lastRoomId) {
             setRoomId(data.lastRoomId);
-            document.title = `UntitledChat - #${roomId}`;
           }
         }
       });
