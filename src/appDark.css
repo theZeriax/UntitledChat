@@ -536,6 +536,12 @@ code {
 }
 
 .title-card {
+  padding: 2rem;
+  background-color: #4040446e;
+  border-width: 10px;
+  border-style: dashed;
+  border-color: #7a7a816e;
+  border-radius: 3rem;
   color: white;
   display: flex;
   justify-content: center;
