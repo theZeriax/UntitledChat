@@ -106,6 +106,11 @@ main::-webkit-scrollbar-thumb {
   background-color: #998ac748;
 }
 
+button {
+  background-color: #00000000;
+  color: white;
+}
+
 form {
   height: 10vh;
   position: fixed;
@@ -188,7 +193,6 @@ form button:hover {
 
 button {
   border: none;
-  color: #e7e7e7;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -326,6 +330,7 @@ a:link:hover {
 .messageText {
   max-width: 400px;
   min-width: none;
+  margin: 1px;
   margin-top: 5px;
   margin-bottom: 0px;
   line-height: 24px;
@@ -340,6 +345,7 @@ a:link:hover {
 }
 
 .messageText img {
+  display: flex;
   max-width: 200px;
   border-radius: 10%;
   margin: 5px 0px 0px 0px;
@@ -368,10 +374,20 @@ a:link:hover {
 }
 
 .avatar {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+  box-shadow: 0px 3px 15px #1b1b1b;
+}
+
+.avatar:hover {
+  border-radius: 35%;
 }
 
 #helpLink {
@@ -402,6 +418,7 @@ a:link:hover {
 }
 
 .messageText .emoji {
+  display: inline-block;
   margin-left: 2px;
   margin-right: 2px;
   vertical-align: text-bottom;
@@ -500,6 +517,62 @@ svg {
 code {
   font-family: "Ubuntu Mono";
   font-size: 1rem;
+}
+
+.line {
+  margin: 0px 7px 0px 7px;
+  color: #6b6b74;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.title-card {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.title-card h1 {
+  margin: 0.3rem;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.title-card p {
+  margin: 0.3rem;
+  color: #9393a7;
+}
+
+.title-card a:any-link {
+  color: #a4a4bd;
+  text-decoration: none;
+}
+
+.title-card a:any-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.secret-img {
+  color: #ffffff;
+  opacity: 30%;
+  font-size: 100px;
+}
+
+.tux {
+  display: none;
 }
 
 @media only screen and (max-width: 728px) {

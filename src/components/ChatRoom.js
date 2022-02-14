@@ -27,7 +27,7 @@ import { FiSend } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router";
 import "react-toastify/dist/ReactToastify.css";
 
-import { auth, db } from "../App";
+import { auth, db } from "../pages/Home";
 import ChatMessage from "./ChatMessage.js";
 
 function ChatRoom({ roomId, setRoomId }) {

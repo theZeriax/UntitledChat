@@ -1,7 +1,6 @@
 import { formatDistanceToNow } from "date-fns";
 import Linkify from "linkify-react";
 import { HiTrash } from "react-icons/hi";
-import { compiler } from "markdown-to-jsx";
 import { doc, deleteDoc } from "firebase/firestore";
 import {
   uniqueNamesGenerator,
@@ -10,7 +9,7 @@ import {
   animals,
 } from "unique-names-generator";
 
-import { auth, db } from "../App";
+import { auth, db } from "../pages/Home";
 import { strToNum } from "../strToNum";
 
 const { twemojify } = require("react-twemojify");
@@ -33,11 +32,11 @@ function ChatMessage(props) {
 
   let result2 =
     typeof result === "string"
-      ? compiler(result)
+      ? result
       : Array.isArray(result)
       ? result.map((r) => {
           if (typeof r === "string") {
-            return compiler(r);
+            return r;
           } else {
             return r;
           }
@@ -57,17 +56,19 @@ function ChatMessage(props) {
           >
             <HiTrash />
           </button>
-          <img
-            className="avatar"
-            src={
-              photoURL
-                ? photoURL
-                : "https://avatars.dicebear.com/api/identicon/" +
-                  uid +
-                  ".svg?scale=50"
-            }
-            alt="Avatar"
-          />
+          <a href={`/user/${uid}`}>
+            <img
+              className="avatar"
+              src={
+                photoURL
+                  ? photoURL
+                  : "https://avatars.dicebear.com/api/identicon/" +
+                    uid +
+                    ".svg?scale=50"
+              }
+              alt={username === null ? "A" : username.charAt(0)}
+            />
+          </a>
           <p className="messageText">
             {
               <Linkify
@@ -92,11 +93,11 @@ function ChatMessage(props) {
                     addSuffix: true,
                   })
                 : "less than a minute ago"}{" "}
-              • {username}
+              • {username === null ? uid : username}
             </>
           ) : (
             <>
-              {username} •{" "}
+              {username === null ? uid : username} •{" "}
               {createdAt
                 ? formatDistanceToNow(new Date(createdAt.toMillis()), {
                     addSuffix: true,
