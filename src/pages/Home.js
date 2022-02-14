@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../appDark.css";
-import "../index.css";
+import "../extra.css";
 // import dotenv from "dotenv";
 
 import { initializeApp } from "firebase/app";

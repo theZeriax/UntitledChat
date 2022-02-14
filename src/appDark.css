@@ -575,6 +575,12 @@ code {
   display: none;
 }
 
+.page-content {
+  text-align: left;
+  padding: 3rem;
+  color: white;
+}
+
 @media only screen and (max-width: 728px) {
   .App header {
     border-radius: 0 0 25px 25px;

@@ -1,25 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Source+Sans+Pro:wght@400;700&family=Tajawal&family=Ubuntu+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Source+Sans+Pro:wght@400;700&family=Tajawal&family=Ubuntu+Mono:wght@400;700&display=swap");
 
 body {
-    background-color: #25282a;
-    font-family: 'Source Sans Pro', 'Tajawal', 'Noto Sans SC';
-    transition: all 0.2s;
-    color: #e7e7e7;
-    align-items: center;
-    justify-content: center;
+  background-color: #25282a;
+  font-family: "Source Sans Pro", "Tajawal", "Noto Sans SC";
+  transition: all 0.2s;
+  color: #e7e7e7;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-content {
-    text-align: center;
-    padding: 50px;
-}
-
-::selection {
-    background: #7151c8af;
-    color: #ffffff;
+  text-align: left;
+  padding: 3rem;
 }
 
 a:any-link {
-    color: #7151c8;
-    text-decoration: none;
+  color: #7151c8;
+  text-decoration: none;
 }

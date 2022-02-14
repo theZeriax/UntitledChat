@@ -139,7 +139,10 @@ function ChatRoom({ roomId, setRoomId }) {
         usernameRef,
         {
           uid,
-          characterName,
+          characterName:
+            auth.currentUser.displayName !== ""
+              ? auth.currentUser.displayName
+              : characterName,
           lastMessage: serverTimestamp(),
           lastRoomId: roomId,
         },
