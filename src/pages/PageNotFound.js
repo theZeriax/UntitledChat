@@ -26,7 +26,7 @@ const PageNotFound = () => {
               }
             }}
           >
-            <h1>400</h1>
+            <h1>404</h1>
           </button>
         </code>
         <div className="line">|</div>
