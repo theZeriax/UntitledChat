@@ -17,7 +17,7 @@
     "dotenv": "^16.0.1",
     "emoji-mart": "^5.1.0",
     "emoji-picker-react": "^3.5.1",
-    "firebase": "^9.8.4",
+    "firebase": "^9.14.0",
     "follow-redirects": "^1.15.1",
     "headlessui": "^0.0.0",
     "hosted-git-info": "^5.0.0",
